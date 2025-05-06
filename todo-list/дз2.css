@@ -1,0 +1,412 @@
+@import url('https://fonts.googleapis.com/css2?family=Ruda:wght@400..900&display=swap');
+
+:root {
+    --white: #ffffff;
+    --black: #000000;
+    --dark-gray: #333;
+    --light-gray: #ccc;
+    --medium-gray: #666;
+    --silver: #BFC0C0;
+    --cyan: #00C0FF;
+    --yellow: #FFCF00;
+    --red: #FC4F4F;
+    --light-bg-gray: #e0e0e0;
+    --medium-bg-gray: #d1d1d1;
+    --dark-bg-gray: #b0b0b0;
+    --button-red: #d9534f;
+    --button-red-hover: #c9302c;
+    --button-red-active: #ac2925;
+    --button-green: #5cb85c;
+    --button-green-hover: #4cae4c;
+    --button-green-active: #3d8b3d;
+    --gradient-pink: #ff0066;
+    --gradient-blue: #4a90e2;
+    --shadow-black-01: rgba(0, 0, 0, 0.1);
+    --shadow-white-02: rgba(255, 255, 255, 0.2);
+    --shadow-dark-08: rgba(0, 0, 0, 0.8);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--white);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+h1 {
+    border-radius: 4px;
+    padding: 8px 16px;
+    text-align: center;
+    background-image: linear-gradient(90deg, var(--cyan) 0%, var(--yellow) 49%, var(--red) 80%, var(--cyan) 100%);
+    background-size: 200% auto;
+    animation: slidebg 5s linear infinite;
+    color: transparent;
+    -webkit-background-clip: text;
+}
+
+@keyframes slidebg {
+    to {
+        background-position: 200% center;
+    }
+}
+
+.todo-container {
+    background-color: var(--white);
+    color: var(--dark-gray);
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px var(--shadow-black-01);
+}
+
+.input-row {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.input-row input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid var(--light-gray);
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+.input-row button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.create-button {
+    background-color: var(--light-bg-gray);
+    color: var(--dark-gray);
+    border-radius: 0;
+}
+
+.create-button:hover {
+    background-color: var(--medium-bg-gray);
+    transform: scale(1.1);
+}
+
+.create-button:active {
+    transform: scale(1);
+    background-color: var(--dark-bg-gray);
+}
+
+.clear-button {
+    background-color: var(--button-red);
+    color: var(--white);
+    border-radius: 0 5px 5px 0;
+}
+
+.clear-button:hover {
+    background-color: var(--button-red-hover);
+    transform: scale(1.1);
+}
+
+.clear-button:active {
+    transform: scale(1);
+    background-color: var(--button-red-active);
+}
+
+.todo-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.todo-list::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.todo-list {
+    scrollbar-width: none;
+}
+
+.todo-list::-webkit-scrollbar {
+    display: none;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: var(--light-bg-gray);
+    border-radius: 5px;
+}
+
+.todo-item.completed .first-child {
+    text-decoration: line-through;
+}
+
+.todo-item span.date {
+    font-size: 0.9rem;
+    color: var(--medium-gray);
+    margin-left: 10px;
+}
+
+.todo-item button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.button-nav button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, color 0.3s ease, box-shadow 0.3s ease;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5px;
+}
+
+.button-nav button:hover {
+    transform: scale(1.2);
+}
+
+.button-nav button:active {
+    transform: scale(1);
+    box-shadow: 0 2px 4px var(--shadow-black-01);
+}
+
+.button-nav .complete {
+    color: var(--button-green);
+    transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button-nav .complete:hover {
+    color: var(--button-green-hover);
+}
+
+.button-nav .complete:active {
+    color: var(--button-green-active);
+}
+
+.button-nav .delete {
+    color: var(--button-red);
+    transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button-nav .delete:hover {
+    color: var(--button-red-hover);
+}
+
+.button-nav .delete:active {
+    color: var(--button-red-active);
+}
+
+.first-child {
+    display: inline-block;
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.filter-button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--white);
+    padding: 5px 10px;
+    margin: 0 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.filter-button:hover {
+    transform: scale(1.1);
+}
+
+.filter-button:active {
+    transform: scale(1);
+}
+
+@media (max-width: 768px) {
+    .todo-container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .input-row input[type="text"] {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .todo-container {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .input-row button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
+
+footer {
+    font-family: "Ruda", sans-serif !important;
+    padding: 5px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+.footer-button {
+    display: inline-flex;
+    height: 40px;
+    width: 150px;
+    border: 2px solid var(--silver);
+    margin: 20px;
+    color: var(--silver);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: .8em;
+    letter-spacing: 1.5px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#arrow-hover {
+    width: 15px;
+    height: 10px;
+    position: absolute;
+    transform: translateX(60px);
+    opacity: 0;
+    transition: all .15s cubic-bezier(.14, .59, 1, 1.01);
+    margin: 0;
+    padding: 0 5px;
+}
+
+a#button-1:hover img {
+    width: 15px;
+    opacity: 1;
+    transform: translateX(50px);
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, var(--gradient-pink), var(--gradient-blue));
+}
+
+.background div {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    background-color: var(--shadow-white-02);
+    border-radius: 50%;
+}
+
+.line {
+    padding-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.line div {
+    width: 650px;
+    height: 2px;
+    background-color: var(--white);
+    border-radius: 10px;
+}
+
+.custom-select {
+    position: relative;
+    font-size: 1.2rem;
+    color: var(--white);
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.custom-select .selected-option {
+    padding: 5px;
+    background: transparent;
+    border: none;
+    text-align: center;
+    width: 150px;
+    white-space: nowrap;
+    transition: all 0.3s ease-in-out;
+}
+
+.custom-select .selected-option:hover {
+    transform: scale(1.1);
+}
+
+.custom-select .selected-option:active {
+    transform: scale(1);
+}
+
+.custom-select .options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--shadow-dark-08);
+    border: 1px solid var(--white);
+    width: 150px;
+    z-index: 1000;
+    border-radius: 5px;
+}
+
+.custom-select .option {
+    padding: 5px;
+    background: transparent;
+    color: var(--white);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.custom-select .option:hover {
+    transform: scale(1.05);
+}
+
+.custom-select .option:active {
+    transform: scale(1);
+}
+
+.button-navfooter {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    display: flex;
+}

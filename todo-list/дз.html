@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список дел</title>
+    <link rel="stylesheet" href="дз2.css">
+</head>
+<body>
+<div class="background">
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+<h1>Список дел</h1>
+<div class="todo-container">
+    <div class="input-row">
+        <input type="text" id="newTodo" placeholder="Новый элемент списка">
+        <button class="create-button" onclick="addTodo()">Создать</button>
+        <button class="clear-button" onclick="clearTodos()">Очистить всё</button>
+    </div>
+    <ul class="todo-list" id="todoList"></ul>
+</div>
+<div class="line">
+    <div></div>
+</div>
+<div class="button-navfooter" style="">
+    <button class="filter-button" onclick="showCompleted()">Сделано</button>
+    <button class="filter-button" onclick="showNotCompleted()">Не сделано</button>
+    <button class="filter-button" onclick="showAll()">Все</button>
+    <div class="custom-select">
+        <div class="selected-option" data-value="default">По умолчанию</div>
+        <div class="options">
+            <div class="option" data-value="default">По умолчанию</div>
+            <div class="option" data-value="alphabet">По алфавиту (а-я)</div>
+            <div class="option" data-value="alphabet-reverse">По алфавиту (я-а)</div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div>
+        <a id="button-1" class="footer-button" href="photo_2025-02-15_21-41-46.jpg">Go to me!<img id="arrow-hover" src="https://github.com/atloomer/atloomer.github.io/blob/master/img/iconmonstr-paper-plane-1-120.png?raw=true"/></a>
+    </div>
+</footer>
+<script src="дз2.js"></script>
+</body>
+</html>

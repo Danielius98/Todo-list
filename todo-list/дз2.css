@@ -30,7 +30,7 @@ body {
     font-family: Arial, sans-serif;
     color: var(--white);
     margin: 0;
-    padding: 0;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -176,9 +176,6 @@ h1 {
     font-size: 1.2rem;
     cursor: pointer;
     transition: transform 0.3s ease-in-out, color 0.3s ease, box-shadow 0.3s ease;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
     padding-top: 5px;
 }
 
@@ -193,7 +190,6 @@ h1 {
 
 .button-nav .complete {
     color: var(--button-green);
-    transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .button-nav .complete:hover {
@@ -206,7 +202,6 @@ h1 {
 
 .button-nav .delete {
     color: var(--button-red);
-    transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .button-nav .delete:hover {
@@ -242,74 +237,6 @@ h1 {
 
 .filter-button:active {
     transform: scale(1);
-}
-
-@media (max-width: 768px) {
-    .todo-container {
-        width: 95%;
-        padding: 15px;
-    }
-
-    .input-row input[type="text"] {
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 1.5rem;
-    }
-
-    .todo-container {
-        width: 100%;
-        padding: 20px;
-    }
-
-    .input-row button {
-        font-size: 0.9rem;
-        padding: 8px 16px;
-    }
-}
-
-footer {
-    font-family: "Ruda", sans-serif !important;
-    padding: 5px;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-}
-
-.footer-button {
-    display: inline-flex;
-    height: 40px;
-    width: 150px;
-    border: 2px solid var(--silver);
-    margin: 20px;
-    color: var(--silver);
-    text-transform: uppercase;
-    text-decoration: none;
-    font-size: .8em;
-    letter-spacing: 1.5px;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-#arrow-hover {
-    width: 15px;
-    height: 10px;
-    position: absolute;
-    transform: translateX(60px);
-    opacity: 0;
-    transition: all .15s cubic-bezier(.14, .59, 1, 1.01);
-    margin: 0;
-    padding: 0 5px;
-}
-
-a#button-1:hover img {
-    width: 15px;
-    opacity: 1;
-    transform: translateX(50px);
 }
 
 .background {
@@ -409,4 +336,229 @@ a#button-1:hover img {
     margin-right: auto;
     padding-top: 10px;
     display: flex;
+}
+
+footer {
+    font-family: "Ruda", sans-serif !important;
+    padding: 5px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+.footer-button {
+    display: inline-flex;
+    height: 40px;
+    width: 150px;
+    border: 2px solid var(--silver);
+    margin: 20px;
+    color: var(--silver);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: .8em;
+    letter-spacing: 1.5px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#arrow-hover {
+    width: 15px;
+    height: 10px;
+    position: absolute;
+    transform: translateX(60px);
+    opacity: 0;
+    transition: all .15s cubic-bezier(.14, .59, 1, 1.01);
+    margin: 0;
+    padding: 0 5px;
+}
+
+a#button-1:hover img {
+    width: 15px;
+    opacity: 1;
+    transform: translateX(50px);
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 8px;
+    }
+
+    .todo-container {
+        width: 95%;
+        padding: 15px;
+        max-width: 500px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        padding: 6px 12px;
+    }
+
+    .input-row input[type="text"] {
+        font-size: 0.95rem;
+        padding: 8px;
+    }
+
+    .input-row button {
+        font-size: 0.95rem;
+        padding: 8px 15px;
+    }
+
+    .todo-item {
+        padding: 8px;
+        margin-bottom: 8px;
+    }
+
+    .todo-item span.date {
+        font-size: 0.85rem;
+        margin-left: 8px;
+    }
+
+    .button-nav button {
+        font-size: 1.1rem;
+    }
+
+    .first-child {
+        max-width: 250px;
+    }
+
+    .filter-button {
+        font-size: 1rem;
+        padding: 4px 8px;
+        margin: 0 3px;
+    }
+
+    .custom-select {
+        font-size: 1rem;
+    }
+
+    .custom-select .selected-option,
+    .custom-select .options {
+        width: 130px;
+    }
+
+    .custom-select .option {
+        padding: 4px;
+    }
+
+    .background div {
+        width: 150px;
+        height: 150px;
+        margin: 8px;
+    }
+
+    .line div {
+        width: 80%;
+        max-width: 500px;
+    }
+
+    .footer-button {
+        height: 35px;
+        width: 130px;
+        font-size: 0.75rem;
+        margin: 15px;
+    }
+
+    #arrow-hover {
+        width: 13px;
+        height: 9px;
+    }
+
+    a#button-1:hover img {
+        width: 13px;
+        transform: translateX(45px);
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+    }
+
+    .todo-container {
+        width: 98%;
+        padding: 10px;
+        max-width: 400px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        padding: 5px 10px;
+    }
+
+    .input-row input[type="text"] {
+        font-size: 0.9rem;
+        padding: 6px;
+    }
+
+    .input-row button {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+
+    .todo-item {
+        padding: 6px;
+        margin-bottom: 6px;
+    }
+
+    .todo-item span.date {
+        font-size: 0.8rem;
+        margin-left: 6px;
+    }
+
+    .button-nav button {
+        font-size: 1rem;
+    }
+
+    .first-child {
+        max-width: 200px;
+    }
+
+    .filter-button {
+        font-size: 0.9rem;
+        padding: 3px 6px;
+        margin: 0 2px;
+    }
+
+    .custom-select {
+        font-size: 0.9rem;
+    }
+
+    .custom-select .selected-option,
+    .custom-select .options {
+        width: 110px;
+    }
+
+    .custom-select .option {
+        padding: 3px;
+    }
+
+    .background div {
+        width: 100px;
+        height: 100px;
+        margin: 5px;
+    }
+
+    .line div {
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .footer-button {
+        height: 30px;
+        width: 110px;
+        font-size: 0.7rem;
+        margin: 10px;
+    }
+
+    #arrow-hover {
+        width: 12px;
+        height: 8px;
+    }
+
+    a#button-1:hover img {
+        width: 12px;
+        transform: translateX(40px);
+    }
 }
